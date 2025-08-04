@@ -1,108 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Banking Dashboard</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Banking UI</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f7fa;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    .header {
-      background-color: #003366;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .container {
+    body {
       display: flex;
-      padding: 20px;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #f0f4f8;
     }
 
-    .sidebar {
-      width: 200px;
-      background-color: #002244;
-      padding: 20px;
-      color: white;
-      height: 100vh;
+    .bank-ui {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
     }
 
-    .sidebar a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 5px;
-    }
-
-    .sidebar a:hover {
-      background-color: #004488;
-    }
-
-    .main-content {
-      flex: 1;
-      padding: 20px;
-    }
-
-    .card {
-      background-color: white;
-      padding: 20px;
+    .balance-card {
+      background: #e0f7fa;
+      padding: 1.5rem;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      color: #00796b;
+      font-weight: bold;
     }
 
-    .card h3 {
-      margin: 0 0 10px;
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
     }
 
-    .balance {
-      font-size: 2em;
-      color: #009933;
+    .btn {
+      flex: 1;
+      padding: 1rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-deposit {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .btn-deposit:hover {
+      background-color: #43a047;
+    }
+
+    .btn-withdraw {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .btn-withdraw:hover {
+      background-color: #e53935;
+    }
+
+    @media (max-width: 480px) {
+      .btn-group {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
-
-  <div class="header">
-    <h1>MyBank</h1>
-    <p>Welcome to your banking dashboard</p>
-  </div>
-
-  <div class="container">
-    <div class="sidebar">
-      <h3>Menu</h3>
-      <a href="#">Dashboard</a>
-      <a href="#">Account Details</a>
-      <a href="#">Transfer Funds</a>
-      <a href="#">Transaction History</a>
-      <a href="#">Logout</a>
+  <div class="bank-ui">
+    <div class="balance-card">
+      Balance: ₹50,000
     </div>
-
-    <div class="main-content">
-      <div class="card">
-        <h3>Account Summary</h3>
-        <p>Account Holder: <strong>Piyush Singh</strong></p>
-        <p>Account Number: <strong>XXXX-XXXX-1234</strong></p>
-        <p>Available Balance:</p>
-        <div class="balance">₹75,450.00</div>
-      </div>
-
-      <div class="card">
-        <h3>Recent Transactions</h3>
-        <ul>
-          <li>+ ₹10,000 – Salary Credit</li>
-          <li>- ₹1,200 – Electricity Bill</li>
-          <li>- ₹2,500 – Online Shopping</li>
-          <li>+ ₹500 – Cashback</li>
-        </ul>
-      </div>
+    <div class="btn-group">
+      <button class="btn btn-deposit">Deposit</button>
+      <button class="btn btn-withdraw">Withdraw</button>
     </div>
   </div>
-
 </body>
 </html>
